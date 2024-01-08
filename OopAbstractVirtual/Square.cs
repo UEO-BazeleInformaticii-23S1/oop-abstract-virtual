@@ -21,6 +21,4 @@ namespace OopAbstractVirtual
             return Width * Width;
         }
     }
-
-    
 }

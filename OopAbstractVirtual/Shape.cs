@@ -19,6 +19,17 @@
 
         public abstract double GetArea();
 
+        public void Print()
+        {
+            Console.WriteLine($"{Name} coordinates:");
+            foreach(Point p in Points)
+            {
+                Console.WriteLine($"    - X={p.X}, Y={p.Y}");
+            }
+
+            Console.WriteLine();
+        }
+
         public void Move(int dx, int dy)
         {
             foreach (Point p in Points)
@@ -33,11 +44,6 @@
             {
                 p.ApplyRotationTransform(angleDegrees);
             }
-        }
-
-        public static void Print()
-        {
-            Console.WriteLine("Printing from Shape");
         }
     }
 }

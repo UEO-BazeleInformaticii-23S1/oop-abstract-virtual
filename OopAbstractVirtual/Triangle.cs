@@ -13,8 +13,6 @@ namespace OopAbstractVirtual
         {
         }
 
-
-
         public override double GetArea()
         {
             Point p1 = Points[0];
