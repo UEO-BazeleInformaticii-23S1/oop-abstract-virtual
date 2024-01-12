@@ -30,7 +30,7 @@
             Console.WriteLine();
         }
 
-        public void Move(int dx, int dy)
+        public virtual void Move(int dx, int dy)
         {
             foreach (Point p in Points)
             {

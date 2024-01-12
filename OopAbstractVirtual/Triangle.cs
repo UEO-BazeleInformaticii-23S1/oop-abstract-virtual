@@ -13,7 +13,7 @@ namespace OopAbstractVirtual
         {
         }
 
-        public override double GetArea()
+        public override sealed double GetArea()
         {
             Point p1 = Points[0];
             Point p2 = Points[1];
@@ -21,6 +21,22 @@ namespace OopAbstractVirtual
 
             double area = Math.Abs(p1.X * (p2.Y - p3.Y) + p2.X * (p3.Y - p1.Y) + p3.X * (p1.Y - p2.Y)) / 2;
             return Math.Round(area, 2);
+        }
+
+        public override void Move(int dx, int dy)
+        {
+            Console.WriteLine("Before triangle move");
+            Print();
+
+            base.Move(dx, dy);
+
+            Console.WriteLine("After triangle move");
+            Print();
+        }
+
+        public void TriangleSpecificStuff()
+        {
+            Console.WriteLine("test");
         }
     }
 }
