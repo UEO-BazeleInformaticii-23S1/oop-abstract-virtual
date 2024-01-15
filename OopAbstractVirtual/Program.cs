@@ -1,9 +1,17 @@
-﻿namespace OopAbstractVirtual
+﻿using OopAbstractVirtual.FragileBaseClassProblem.Consumer;
+
+namespace OopAbstractVirtual
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            AutoCountingCollectionOfIntegers collection = new AutoCountingCollectionOfIntegers();
+            collection.AddElement(1);
+            collection.AddCollection(new[] { 2, 3 });
+            Console.WriteLine($"Count: {collection.Count}");
+
+
             NonPolymorphicDoSomethingWithBaseClass(new ChildClass());
 
             //Shape s = new Shape("weird shape");
@@ -78,7 +86,7 @@
             obj.DoSomethingElse();
         }
 
-        private static void NonPolymorphicDoSomethingWithBaseClass(BaseClass obj)
+        private static void NonPolymorphicDoSomethingWithBaseClass(ChildClass obj)
         {
             obj.NonPolymorphicDoSomething();
         }
@@ -111,7 +119,7 @@
             Console.WriteLine("ChildClass - DoSomethingElse");
         }
 
-        public void NonPolymorphicDoSomething()
+        public new void NonPolymorphicDoSomething()
         {
             Console.WriteLine("ChildClass - NonPolymorphicDoSomething");
         }

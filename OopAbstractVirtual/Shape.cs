@@ -21,6 +21,7 @@
 
         public void Print()
         {
+            Console.WriteLine("${Name} area:" + GetArea());
             Console.WriteLine($"{Name} coordinates:");
             foreach(Point p in Points)
             {
